@@ -1,0 +1,26 @@
+.culinaria .imagem {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.table.comida td {
+  vertical-align: middle;
+}
+
+.table.comida tbody img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.table.comida .preco {
+  width: 100px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .table.comida .descricao {
+    display: none;
+  }
+}
