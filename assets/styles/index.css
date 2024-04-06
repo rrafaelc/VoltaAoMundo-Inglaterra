@@ -8,6 +8,10 @@ main {
   padding-top: 70px;
 }
 
+.justify {
+  text-align: justify;
+}
+
 .flag-logo {
   display: flex;
   justify-content: center;
