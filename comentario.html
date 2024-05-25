@@ -11,12 +11,12 @@
     />
 
     <link rel="stylesheet" href="./assets/styles/index.css" />
-    <link rel="stylesheet" href="./assets/styles/contato.css" />
+    <link rel="stylesheet" href="./assets/styles/comentario.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand flag-logo" href="/">
+        <a class="navbar-brand flag-logo" href="index.html">
           <video muted autoplay loop>
             <source src="./assets/videos/flag-video.mp4" type="video/mp4" />
           </video>
@@ -54,7 +54,9 @@
               <a class="nav-link" href="historia.html">História</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="comentario.html">Deixe seu comentário</a>
+              <a class="nav-link" href="comentario.html"
+                >Deixe seu comentário</a
+              >
             </li>
           </ul>
         </div>
@@ -63,88 +65,37 @@
 
     <main class="container">
       <h1 class="text-center my-4">Deixe seu comentário</h1>
-      <form class="row g-3 mb-4" method="post">
+      <form class="row g-3 mb-4" method="post" action="gravar-comentario.php">
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
+          <label for="name" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Rafael Costa"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
           <input
             type="email"
             class="form-control"
-            id="inputEmail4"
+            id="email"
             placeholder="email@email.com"
             required
           />
         </div>
-        <div class="col-md-6">
-          <label for="inputTel4" class="form-label">WhatsApp</label>
-          <input
+        <div class="col-12">
+          <label for="comentario" class="form-label">Comentário</label>
+          <textarea
             type="text"
             class="form-control"
-            id="inputTel4"
-            placeholder="99 9 9999 9999"
+            id="comentario"
+            placeholder="Escreva seu comentário"
+            rows="10"
             required
-          />
-        </div>
-        <div class="col-12">
-          <label for="inputAddress" class="form-label">Endereço</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress"
-            placeholder="José Bonifácio, 123"
-          />
-        </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Endereço 2</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress2"
-            placeholder="Centro"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">Cidade</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputCity"
-            placeholder="Itapira"
-          />
-        </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">Estado</label>
-          <select id="inputState" class="form-select">
-            <option selected>Escolha...</option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="AM">Amazonas</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="MT">Mato Grosso</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <label for="inputZip" class="form-label">CEP</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputZip"
-            placeholder="13970-000"
-            required
-          />
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="gridCheck"
-              required
-            />
-            <label class="form-check-label" for="gridCheck">
-              Aceito os
-              <a href="termos-de-uso.html" target="_blank">termos de uso</a>
-            </label>
-          </div>
+          ></textarea>
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Enviar</button>
