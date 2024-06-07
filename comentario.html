@@ -67,11 +67,12 @@
       <h1 class="text-center my-4">Deixe seu comentário</h1>
       <form class="row g-3 mb-4" method="post" action="gravar-comentario.php">
         <div class="col-md-6">
-          <label for="name" class="form-label">Nome</label>
+          <label for="nome" class="form-label">Nome</label>
           <input
             type="text"
             class="form-control"
-            id="name"
+            id="nome"
+            name="nome"
             placeholder="Rafael Costa"
             required
           />
@@ -82,6 +83,7 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="email@email.com"
             required
           />
@@ -92,6 +94,7 @@
             type="text"
             class="form-control"
             id="comentario"
+            name="comentario"
             placeholder="Escreva seu comentário"
             rows="10"
             required
