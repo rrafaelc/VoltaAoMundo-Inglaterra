@@ -1,16 +1,20 @@
+<?php
+include 'classes/Comentario.php';
+
+$comentario = new Comentario();
+$comentarios = $comentario->listar(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato</title>
+  <title>Comentários</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon/bandeira.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
   <link rel="stylesheet" href="./assets/styles/index.css" />
-  <link rel="stylesheet" href="./assets/styles/gravar-comentario.css" />
-  <meta http-equiv="refresh" content="5; URL=comentarios.php">
+  <link rel="stylesheet" href="./assets/styles/comentarios.css" />
 </head>
 
 <body>
@@ -22,7 +26,6 @@
         </video>
         Inglaterra
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,37 +49,24 @@
           <li class="nav-item">
             <a class="nav-link" href="comentario.html">Envie um comentário</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comentarios.php">Comentários</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main class="container mt-5 pt-5">
-    <div class="card">
-      <div class="card-body">
-        <?php
-        try {
-          include_once "classes/Comentario.php";
-
-          $nome = $_POST['nome'];
-          $email = $_POST['email'];
-          $comentario = $_POST['comentario'];
-
-          $comentarioClasse = new Comentario();
-
-          $comentarioClasse->nome = $nome;
-          $comentarioClasse->email = $email;
-          $comentarioClasse->comentario = $comentario;
-
-          $comentarioClasse->inserir();
-
-          echo "<div class='alert alert-success' role='alert'>Obrigado $nome, seu comentário foi registrado com sucesso!</div>";
-          echo "<p>Clique <a href='comentarios.php'>aqui</a> para listar os comentários ou espere 5 segundos</p>";
-        } catch (Exception $erro) {
-          echo "<div class='alert alert-danger' role='alert'>" . $erro->getMessage() . "</div>";
-        }
-        ?>
-      </div>
+  <main class="container my-5 pt-5">
+    <h1>Comentários</h1>
+    <div class="list-group">
+      <?php foreach ($comentarios as $comentario) : ?>
+        <div class="list-group-item">
+          <h5 class="mb-1">Nome: <?= htmlspecialchars($comentario['nome']) ?></h5>
+          <p class="mb-1">Comentário: <?= htmlspecialchars($comentario['comentario']) ?></p>
+          <small>Email: <?= htmlspecialchars($comentario['email']) ?></small>
+        </div>
+      <?php endforeach; ?>
     </div>
   </main>
 
