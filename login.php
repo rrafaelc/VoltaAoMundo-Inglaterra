@@ -4,13 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato</title>
+  <title>Login</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon/bandeira.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
   <link rel="stylesheet" href="./assets/styles/index.css" />
-  <link rel="stylesheet" href="./assets/styles/gravar-comentario.css" />
-  <meta http-equiv="refresh" content="5; URL=comentarios.php">
+  <link rel="stylesheet" href="./assets/styles/login.css" />
 </head>
 
 <body>
@@ -22,7 +20,6 @@
         </video>
         Inglaterra
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -60,33 +57,25 @@
     </div>
   </nav>
 
-  <main class="container mt-5 pt-5">
-    <div class="card">
-      <div class="card-body">
-        <?php
-        try {
-          include_once "classes/Comentario.php";
-
-          $nome = $_POST['nome'];
-          $email = $_POST['email'];
-          $comentario = $_POST['comentario'];
-
-          $comentarioClasse = new Comentario();
-
-          $comentarioClasse->nome = $nome;
-          $comentarioClasse->email = $email;
-          $comentarioClasse->comentario = $comentario;
-
-          $comentarioClasse->inserir();
-
-          echo "<div class='alert alert-success' role='alert'>Obrigado $nome, seu comentário foi registrado com sucesso!</div>";
-          echo "<p>Clique <a href='comentarios.php'>aqui</a> para listar os comentários ou espere 5 segundos</p>";
-        } catch (Exception $erro) {
-          echo "<div class='alert alert-danger' role='alert'>" . $erro->getMessage() . "</div>";
-        }
-        ?>
+  <main class="container my-5 pt-5">
+    <h1 class="mb-4">Login</h1>
+    <form action="usuario-login.php" method="POST">
+      <div class="form-outline mb-4">
+        <label class="form-label" for="email">Email</label>
+        <input id="email" name="email" type="email" class="form-control" placeholder="Digite seu email" required />
       </div>
-    </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" class="form-control" placeholder="Digite sua senha" required />
+      </div>
+
+      <button id="botao-enviar" type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
+
+      <div class="text-center">
+        <p>Não tem uma conta? <a href="registrar.php">Registre-se</a></p>
+      </div>
+    </form>
   </main>
 
   <footer class="footer">

@@ -5,6 +5,7 @@ class Comentario
   public $nome;
   public $email;
   public $comentario;
+  public $aprovado;
 
   public function __construct($id = false)
   {

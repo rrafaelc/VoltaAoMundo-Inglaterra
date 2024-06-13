@@ -52,6 +52,12 @@ $comentarios = $comentario->listar(); ?>
           <li class="nav-item">
             <a class="nav-link" href="comentarios.php">Comentários</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./usuario-logout.php">Logout</a>
+          </li>
         </ul>
       </div>
     </div>
