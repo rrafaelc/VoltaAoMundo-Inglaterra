@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Cultura - Inglaterra</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon/bandeira.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
   <link rel="stylesheet" href="./assets/styles/index.css" />
-  <link rel="stylesheet" href="./assets/styles/login.css" />
+  <link rel="stylesheet" href="./assets/styles/cultura.css" />
 </head>
 
 <body>
@@ -20,6 +21,7 @@
         </video>
         Inglaterra
       </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -57,25 +59,62 @@
     </div>
   </nav>
 
-  <main class="container my-5 pt-5">
-    <h1 class="mb-4">Login</h1>
-    <form action="usuario-login.php" method="POST">
-      <div class="form-outline mb-4">
-        <label class="form-label" for="email">Email</label>
-        <input id="email" name="email" type="email" class="form-control" placeholder="Digite seu email" required />
+  <main class="container-lg historia">
+    <div class="row">
+      <h1 class="display-5 my-2 text-center">Cultura</h1>
+    </div>
+
+    <div class="container marketing my-5">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Chá da tarde</h2>
+          <p class="lead">
+            O chá da tarde é uma tradição muito popular na Inglaterra. Surgiu
+            no século XIX e consiste em uma refeição leve, geralmente
+            acompanhada de chá e bolos. É uma forma de socializar e relaxar no
+            final da tarde.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img src="./assets/images/cultura/cha-da-tarde.jpg" alt="Chá da tarde" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" />
+        </div>
       </div>
 
-      <div class="form-outline mb-4">
-        <label class="form-label" for="senha">Senha</label>
-        <input id="senha" name="senha" type="password" class="form-control" placeholder="Digite sua senha" required />
+      <hr class="featurette-divider" />
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1">Futebol</h2>
+          <p class="lead">
+            O futebol é um esporte muito popular na Inglaterra. O país é
+            considerado o berço do futebol moderno, com a criação das regras
+            do jogo em 1863. Os clubes de futebol ingleses têm uma grande
+            rivalidade e os jogos são sempre muito disputados e emocionantes.
+          </p>
+        </div>
+
+        <div class="col-md-5 order-md-1">
+          <img src="./assets/images/cultura/futebol.jpg" alt="Chá da tarde" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" />
+        </div>
       </div>
 
-      <button id="botao-enviar" type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
+      <hr class="featurette-divider" />
 
-      <div class="text-center">
-        <p>Não tem uma conta? <a href="registrar.php">Registre-se</a></p>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Música</h2>
+          <p class="lead">
+            A música britânica tem uma influência mundial. Bandas como The
+            Beatles, Rolling Stones e Queen são ícones da música pop e rock. O
+            Reino Unido é conhecido por produzir talentos musicais de sucesso
+            que conquistam fãs em todo o mundo.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img src="./assets/images/cultura/the-beatles.jpg" alt="Chá da tarde" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" />
+        </div>
       </div>
-    </form>
+    </div>
   </main>
 
   <footer class="footer">

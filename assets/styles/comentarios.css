@@ -1,0 +1,15 @@
+.listar-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comentario {
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+
+.comentario p {
+  margin: 0;
+}

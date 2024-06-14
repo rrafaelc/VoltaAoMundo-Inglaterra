@@ -29,22 +29,22 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Ínicio</a>
+            <a class="nav-link" href="./index.php">Ínicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cultura.html">Cultura</a>
+            <a class="nav-link" href="cultura.php">Cultura</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gastronomia.html">Gastronomia</a>
+            <a class="nav-link" href="gastronomia.php">Gastronomia</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pontos-turisticos.html">Pontos Turísticos</a>
+            <a class="nav-link" href="pontos-turisticos.php">Pontos Turísticos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="historia.html">História</a>
+            <a class="nav-link" href="historia.php">História</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="comentario.html">Envie um comentário</a>
+            <a class="nav-link" href="comentario.php">Envie um comentário</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="comentarios.php">Comentários</a>
@@ -100,11 +100,11 @@
             <p class="mb-0">Professor Júnior Gonçalves</p>
             <p class="mb-0">FATEC Itapira "Ogari de Castro Pacheco"</p>
             <div class="mt-2">
-              <a href="./index.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Ínicio</a>
-              <a href="cultura.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Cultura</a>
-              <a href="gastronomia.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Gastronomia</a>
-              <a href="pontos-turisticos.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Pontos Turísticos</a>
-              <a href="historia.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">História</a>
+              <a href="./index.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Ínicio</a>
+              <a href="cultura.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Cultura</a>
+              <a href="gastronomia.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Gastronomia</a>
+              <a href="pontos-turisticos.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Pontos Turísticos</a>
+              <a href="historia.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">História</a>
               <a href="contato.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Contato</a>
             </div>
           </div>
