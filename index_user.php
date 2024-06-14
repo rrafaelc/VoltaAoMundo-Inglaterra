@@ -4,9 +4,9 @@ require_once 'usuario-verifica.php';
 if (
     isset($_SESSION['usuario']) &&
     isset($_SESSION['role']) &&
-    $_SESSION['role'] != 'adm'
+    $_SESSION['role'] != 'user'
 ) {
-    header('Location: index_user.php');
+    header('Location: index_adm.php');
 }
 ?>
 
@@ -16,7 +16,7 @@ if (
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel Admin</title>
+    <title>Painel Usuário</title>
     <link rel="icon" type="image/x-icon" href="./assets/favicon/bandeira.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/index.css" />
@@ -80,7 +80,7 @@ if (
     </nav>
 
     <main class="container my-5 pt-5">
-        Pagina admin
+        Pagina usuario
     </main>
 
     <footer class="footer">

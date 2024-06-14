@@ -1,6 +1,8 @@
 <?php
 include 'classes/Comentario.php';
 
+session_start();
+
 $comentario = new Comentario();
 $comentarios = $comentario->listar(); ?>
 
@@ -53,10 +55,20 @@ $comentarios = $comentario->listar(); ?>
             <a class="nav-link" href="comentarios.php">Comentários</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
-          </li>
+            <?= isset($_SESSION['usuario']) &&
+              isset($_SESSION['role']) &&
+              $_SESSION['role'] == 'adm'
+              ? '<a class="nav-link" href="index_adm.php">Painel Admin</a>'
+              : (isset($_SESSION['usuario']) &&
+                isset($_SESSION['role']) && $_SESSION['role'] == 'user' ?
+                '<a class="nav-link" href="index_user.php">Painel Usuário</a>'
+                : '')
+            ?>
           <li class="nav-item">
-            <a class="nav-link" href="./usuario-logout.php">Logout</a>
+            <?= !isset($_SESSION['usuario'])
+              ? '<a class="nav-link" href="login.php">Login</a>'
+              : '<a class="nav-link" href="./usuario-logout.php">Logout</a>'
+            ?>
           </li>
         </ul>
       </div>

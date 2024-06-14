@@ -1,10 +1,12 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato</title>
+  <title>Envie um comentário</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon/bandeira.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -49,10 +51,20 @@
             <a class="nav-link" href="comentarios.php">Comentários</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
-          </li>
+            <?= isset($_SESSION['usuario']) &&
+              isset($_SESSION['role']) &&
+              $_SESSION['role'] == 'adm'
+              ? '<a class="nav-link" href="index_adm.php">Painel Admin</a>'
+              : (isset($_SESSION['usuario']) &&
+                isset($_SESSION['role']) && $_SESSION['role'] == 'user' ?
+                '<a class="nav-link" href="index_user.php">Painel Usuário</a>'
+                : '')
+            ?>
           <li class="nav-item">
-            <a class="nav-link" href="./usuario-logout.php">Logout</a>
+            <?= !isset($_SESSION['usuario'])
+              ? '<a class="nav-link" href="login.php">Login</a>'
+              : '<a class="nav-link" href="./usuario-logout.php">Logout</a>'
+            ?>
           </li>
         </ul>
       </div>

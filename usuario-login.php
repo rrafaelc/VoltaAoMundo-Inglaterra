@@ -17,6 +17,7 @@ if ($usuario->isAdmin) {
 	} else {
 		session_start();
 		$_SESSION['usuario'] = $usuario->email;
+		$_SESSION['role'] = 'adm';
 		header('Location: index_adm.php');
 	}
 } else {
@@ -25,6 +26,7 @@ if ($usuario->isAdmin) {
 	} else {
 		session_start();
 		$_SESSION['usuario'] = $usuario->email;
-		header('Location: index_usu.php');
+		$_SESSION['role'] = 'user';
+		header('Location: index_user.php');
 	}
 }
