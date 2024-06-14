@@ -16,7 +16,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand flag-logo" href="index.html">
+      <a class="navbar-brand flag-logo" href="index.php">
         <video muted autoplay loop>
           <source src="./assets/videos/flag-video.mp4" type="video/mp4" />
         </video>
