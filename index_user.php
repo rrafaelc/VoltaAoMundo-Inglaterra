@@ -68,6 +68,15 @@ if (
                                 '<a class="nav-link" href="index_user.php">Painel Usuário</a>'
                                 : '')
                         ?>
+                    </li>
+                    <li class="nav-item">
+                        <?= isset($_SESSION['usuario']) &&
+                            isset($_SESSION['role']) &&
+                            $_SESSION['role'] == 'adm'
+                            ? '<a class="nav-link" href="exportar_comentarios.php">Exportar comentários</a>'
+                            : ''
+                        ?>
+                    </li>
                     <li class="nav-item">
                         <?= !isset($_SESSION['usuario'])
                             ? '<a class="nav-link" href="login.php">Login</a>'

@@ -95,4 +95,24 @@ class Comentario
     include "conexao.php";
     $conexao->exec($sql);
   }
+
+  public function exportar()
+  {
+    include "conexao.php";
+
+    $sql = "SELECT nome, email, comentario FROM tb_comentario WHERE aprovado OR aprovado IS NULL";
+    $resultado = $conexao->query($sql);
+
+    $comentarios = [];
+    while ($linha = $resultado->fetch()) {
+      $comentario = [
+        'nome' => $linha['nome'],
+        'email' => $linha['email'],
+        'comentario' => $linha['comentario']
+      ];
+      $comentarios[] = $comentario;
+    }
+
+    return $comentarios;
+  }
 }
