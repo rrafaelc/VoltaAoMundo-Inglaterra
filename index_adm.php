@@ -7,6 +7,10 @@ if (
     $_SESSION['role'] != 'adm'
 ) {
     header('Location: index_user.php');
+} else {
+    include 'classes/Comentario.php';
+    $comentario = new Comentario();
+    $comentarios = $comentario->listarAdmin();
 }
 ?>
 
@@ -20,7 +24,7 @@ if (
     <link rel="icon" type="image/x-icon" href="./assets/favicon/bandeira.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/index.css" />
-    <link rel="stylesheet" href="./assets/styles/login.css" />
+    <link rel="stylesheet" href="./assets/styles/index_adm.css" />
 </head>
 
 <body>
@@ -80,7 +84,21 @@ if (
     </nav>
 
     <main class="container my-5 pt-5">
-        Pagina admin
+        <h1>Comentários - Painel Admin</h1>
+        <div class="listar-comentarios">
+            <?php foreach ($comentarios as $comentario) : ?>
+                <div class="comentario">
+                    <h5>Nome: <?= htmlspecialchars($comentario['nome']) ?></h5>
+                    <p><strong>Comentário:</strong> <?= htmlspecialchars($comentario['comentario']) ?></p>
+                    <small><strong>Email:</strong> <?= htmlspecialchars($comentario['email']) ?></small>
+
+                    <div class="mt-2">
+                        <button type="button" class="btn btn-success" onclick="aprovarRejeitarComentario(<?= $comentario['id'] ?>, 'aprovar')">Aprovar</button>
+                        <button type="button" class="btn btn-danger" onclick="aprovarRejeitarComentario(<?= $comentario['id'] ?>, 'rejeitar')">Rejeitar</button>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </main>
 
     <footer class="footer">
@@ -111,6 +129,30 @@ if (
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function aprovarRejeitarComentario(id, acao) {
+            fetch('aprovar_desaprovar.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'id': id,
+                        'acao': acao
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Comentário ' + (acao === 'aprovar' ? 'aprovado' : 'rejeitado') + ' com sucesso!');
+                        location.reload();
+                    } else {
+                        alert('Erro ao ' + acao + ' comentário.');
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+    </script>
 </body>
 
 </html>

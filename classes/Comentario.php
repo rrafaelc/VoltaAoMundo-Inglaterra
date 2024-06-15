@@ -30,9 +30,22 @@ class Comentario
 
   public function listar()
   {
-    $sql = "SELECT * FROM tb_comentario";
-
     include "conexao.php";
+
+    $sql = "SELECT * FROM tb_comentario WHERE aprovado";
+
+    $resultado = $conexao->query($sql);
+    $lista = $resultado->fetchAll();
+
+    return $lista;
+  }
+
+  public function listarAdmin()
+  {
+    include "conexao.php";
+
+    $sql = "SELECT * FROM tb_comentario WHERE aprovado IS NULL";
+
     $resultado = $conexao->query($sql);
     $lista = $resultado->fetchAll();
 
@@ -66,7 +79,17 @@ class Comentario
     $sql = "UPDATE tb_comentario SET 
                     nome = '$this->nome' ,
                     email = '$this->email' ,
-                    comentario = '$this->comentario'                   
+                    comentario = '$this->comentario'
+                WHERE id = $this->id ";
+
+    include "conexao.php";
+    $conexao->exec($sql);
+  }
+
+  public function aprovarDesaprovar($aprovado)
+  {
+    $sql = "UPDATE tb_comentario SET 
+                    aprovado = '$aprovado'
                 WHERE id = $this->id ";
 
     include "conexao.php";
