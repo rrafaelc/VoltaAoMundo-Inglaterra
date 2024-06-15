@@ -80,35 +80,9 @@ if (
     </nav>
 
     <main class="container my-5 pt-5">
-        Pagina usuario
+        <p>Não tem nada aqui</p>
+        <img src="./assets/images/gifs/2ec.gif" class="img-fluid" />
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="mt-4 text-center">
-                    <div>
-                        <h6 class="footer-heading text-uppercase fw-bold">Informações</h6>
-                        <p class="mb-0">Desenvolvido por Carlos Rafael da Costa</p>
-                        <p class="mb-0">Aula de Desenvolvimento Web III</p>
-                        <p class="mb-0">Professor Júnior Gonçalves</p>
-                        <p class="mb-0">FATEC Itapira "Ogari de Castro Pacheco"</p>
-                        <div class="mt-2">
-                            <a href="./index.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Ínicio</a>
-                            <a href="cultura.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Cultura</a>
-                            <a href="gastronomia.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Gastronomia</a>
-                            <a href="pontos-turisticos.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Pontos Turísticos</a>
-                            <a href="historia.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">História</a>
-                            <a href="contato.html" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-semibold">Contato</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center bg-dark text-white mt-4 p-1">
-            <p class="mb-0 fw-bold">2024 © Carlos Rafael da Costa</p>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
