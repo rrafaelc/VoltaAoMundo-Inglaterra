@@ -7,6 +7,7 @@ if (
     $_SESSION['role'] != 'adm'
 ) {
     header('Location: index_user.php');
+    exit();
 } else {
     include 'classes/Comentario.php';
     $comentario = new Comentario();
@@ -85,6 +86,17 @@ if (
 
     <main class="container my-5 pt-5">
         <h1>Comentários - Painel Admin</h1>
+        <div class="mb-5">
+            <h2>Importar Comentários</h2>
+            <form action="importar_comentarios.php" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="jsonFile" class="form-label">Selecionar arquivo JSON</label>
+                    <input type="file" class="form-control" id="jsonFile" name="jsonFile" accept=".json" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Importar</button>
+            </form>
+        </div>
+
         <div class="listar-comentarios">
             <?php foreach ($comentarios as $comentario) : ?>
                 <div class="comentario">
@@ -99,6 +111,8 @@ if (
                 </div>
             <?php endforeach; ?>
         </div>
+
+
     </main>
 
     <footer class="footer">
